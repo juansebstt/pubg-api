@@ -24,7 +24,7 @@ public class Weapon {
     private WeaponType weaponType;
 
     private int hitDamage;
-    private String initialBulletSpeed;
+    private double initialBulletSpeed;
 
     @Enumerated(EnumType.STRING)
     private AmmoType ammoType;
@@ -36,7 +36,7 @@ public class Weapon {
     private String rarity;
 
     @Enumerated(EnumType.STRING)
-    private FiringMode firingModes;
+    private FiringMode firingMode;
 
     @Getter
     public enum FiringMode {
@@ -87,5 +87,13 @@ public class Weapon {
         WeaponType(String description) {
             this.description = description;
         }
+    }
+
+    public String getAmmoTypeDescription() {
+        return ammoType.getDescription();
+    }
+
+    public String getWeaponTypeDescription() {
+        return weaponType.getDescription();
     }
 }
