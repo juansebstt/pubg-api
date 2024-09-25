@@ -1,12 +1,19 @@
-server:
-  port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/pubg_game_db
-    username: postgres
-    password: 1234
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:mem:pubg_game_db  # This defines an in-memory H2 database
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true  # Enables access to the H2 database console
   jpa:
     hibernate:
-      ddl-auto: update
-    show-sql: true
+      ddl-auto: update  # Creates/updates the tables automatically based on your entities
+    show-sql: true  # Shows the generated SQL queries in the console
+
+# Optional: To customize the H2 console path
+server:
+  port: 8080  # Default server port, you can change it if needed
+  servlet:
+    context-path: /api  # Optional, customize the root path of the application
