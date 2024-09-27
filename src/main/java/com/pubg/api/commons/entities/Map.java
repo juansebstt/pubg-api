@@ -83,7 +83,7 @@ public class Map {
                 ("Capaco", "Lab", "Hellipad", "Atahul", "Makalpa")),
 
         HAVEN(Arrays.asList
-                ()),
+                ("Industrial Park", "Rail Yard", "Coal Yards", "Carbon Steelworks", "Docks", "Residential")),
 
         RONDO(Arrays.asList
                 ());
