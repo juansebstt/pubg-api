@@ -86,7 +86,10 @@ public class Map {
                 ("Industrial Park", "Rail Yard", "Coal Yards", "Carbon Steelworks", "Docks", "Residential")),
 
         RONDO(Arrays.asList
-                ());
+                ("Kun Xia", "Rai An", "Nan Chuan", "Min Hu", "Mu Ho Pan", "Hemay Town", "Bei Li", "Stadium",
+                        "Bamboo", "Test Track", "Neox Factory", "Mey Ran", "Lo Hua Xing", "Jao Tin", "Yu Lin",
+                        "Fong Tun", "Lan Po", "Dan Ching", "Tu Ling", "Jadena City", "Tin Long Gardens",
+                        "Hung Shang", "Rin Jiang", "Long Ho"));
 
         private final List<String> cities;
 
