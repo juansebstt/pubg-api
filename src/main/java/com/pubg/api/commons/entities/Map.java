@@ -28,7 +28,8 @@ public class Map {
 
     private String size;
 
-    @ManyToMany(mappedBy = "maps")
+    @ManyToMany(mappedBy = "maps", cascade = {CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH})
     private Set<Vehicle> vehicles = new HashSet<>();
 
     @Enumerated(EnumType.STRING)

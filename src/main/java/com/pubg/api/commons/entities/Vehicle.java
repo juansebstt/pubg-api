@@ -33,7 +33,7 @@ public class Vehicle {
     @Enumerated(EnumType.STRING)
     private VehicleCategory vehicleCategory;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
             name = "vehicle_map",
             joinColumns = @JoinColumn(name = "vehicle_id"),
