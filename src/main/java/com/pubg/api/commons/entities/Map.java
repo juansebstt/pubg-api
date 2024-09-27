@@ -62,10 +62,14 @@ public class Map {
                         "Ha Po", "Ho San Prison", "School", "Song Am", "Hospital", "Oh Hyang")),
 
         VIKENDI(Arrays.asList
-                ("Dobro Mesto", "Castle", "Cosmodrome", "Volnova")),
+                ("Castle", "Cosmodrome", "Volnova", "Observatory", "Coal Mine", "Dinoland", "Naros",
+                        "Laveni", "Villa", "Train Station", "Trika", "Lumber Yard", "Naznova", "Deka Mesto",
+                        "Cave", "Pavilka", "Winery", "Kranik")),
 
         SANHOK(Arrays.asList
-                ("Bootcamp", "Paradise Resort", "Ruins", "Pai Nan")),
+                ("Bootcamp", "Paradise Resort", "Ruins", "Pai Nan", "Camp Alpha", "Camp Bravo", "Camp Charlie",
+                        "Ruins", "Ha Tihn", "Tat Mok", "Khao", "Mongnai", "Bhan", "Lakawi", "Quarry", "Kampong",
+                        "Tambang", "Cave", "Docks", "Ban Tar", "Sahmee", "Na Kham")),
 
         DESTON(Arrays.asList
                 ()),
