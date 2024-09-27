@@ -72,18 +72,21 @@ public class Map {
                         "Tambang", "Cave", "Docks", "Ban Tar", "Sahmee", "Na Kham")),
 
         DESTON(Arrays.asList
-                ()),
+                ("Ten Forts", "Swamp", "Concert", "Carpenter's End ", "Assembly", "Wind Farm", "Ripton", "Arena",
+                        "Buxley", "Los Arcos", "Construction Site", "Turrita", "Barclift", "Lodge", "Sancarna",
+                        "Hydroelectric Dam", "El Koro", "Holston Meadows")),
 
         KARAKIN(Arrays.asList
                 ("Al Habar", "Bahr Sahir", "Bashara", "Hadiqa Nemo", "Al Hayik", "Cargo Ship")),
 
         PARAMO(Arrays.asList
-                ()),
+                ("Capaco", "Lab", "Hellipad", "Atahul", "Makalpa")),
+
         HAVEN(Arrays.asList
                 ()),
+
         RONDO(Arrays.asList
                 ());
-
 
         private final List<String> cities;
 
