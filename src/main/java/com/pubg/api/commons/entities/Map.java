@@ -99,4 +99,38 @@ public class Map {
         }
     }
 
+    // Method to get cities for the specific map
+    public List<String> getCities() {
+        return mapName.getCities();
+    }
+
+    @Getter
+    public enum Weather {
+        SUNNY,
+        FOGGY,
+        RAINY,
+        OVERCAST,
+        SUNSET,
+        MOONLIGHT,
+        STORMY,
+        WINDY
+    }
+
+    @Getter
+    public enum Location {
+        NORTH_AMERICA,
+        SOUTH_AMERICA,
+        EUROPE,
+        ANTARCTICA,
+        AFRICA,
+        ASIA,
+        OCEANIA
+    }
+
+    @Getter
+    public enum TypeOfCombat {
+        CLOSE_QUARTER_COMBAT,
+        MEDIUM_RANGE,
+        LONG_RANGE,
+    }
 }
