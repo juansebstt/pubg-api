@@ -57,7 +57,9 @@ public class Map {
                         "Patrona", "Southern Island", "Prison", "Valle del Mar")),
 
         TAEGO(Arrays.asList
-                ("Hosan", "Buk San Sa", "Samil", "Palace")),
+                ("Ho San", "Buk San Sa", "Samil", "Palace", "Shipyard", "Army Base", "Wol Song", "Airport",
+                        "Terminal", "Young Cheon", "Go Dok", "Hae Moo Sa", "Kang Neung", "Ho San", "Fishing Camp",
+                        "Ha Po", "Ho San Prison", "School", "Song Am", "Hospital", "Oh Hyang")),
 
         VIKENDI(Arrays.asList
                 ("Dobro Mesto", "Castle", "Cosmodrome", "Volnova")),
