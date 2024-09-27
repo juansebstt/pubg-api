@@ -41,7 +41,7 @@ public class Map {
 
     @Enumerated(EnumType.STRING)
     private Weather weather;
-    
+
     @Getter
     public enum MapName {
         ERANGEL(Arrays.asList
@@ -58,14 +58,19 @@ public class Map {
 
         TAEGO(Arrays.asList
                 ("Hosan", "Buk San Sa", "Samil", "Palace")),
+
         VIKENDI(Arrays.asList
                 ("Dobro Mesto", "Castle", "Cosmodrome", "Volnova")),
+
         SANHOK(Arrays.asList
                 ("Bootcamp", "Paradise Resort", "Ruins", "Pai Nan")),
+
         DESTON(Arrays.asList
                 ()),
+
         KARAKIN(Arrays.asList
-                ()),
+                ("Al Habar", "Bahr Sahir", "Bashara", "Hadiqa Nemo", "Al Hayik", "Cargo Ship")),
+
         PARAMO(Arrays.asList
                 ()),
         HAVEN(Arrays.asList
