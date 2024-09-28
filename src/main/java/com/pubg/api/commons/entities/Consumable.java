@@ -17,4 +17,15 @@ public class Consumable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    private String name;
+
+    @Enumerated(EnumType.STRING)
+    private Healing healing;
+
+    private String description;
+
+    private String healingAmount;
+    private String boosterAmount;
+
 }

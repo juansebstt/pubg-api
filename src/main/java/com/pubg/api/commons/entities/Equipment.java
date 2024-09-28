@@ -17,4 +17,6 @@ public class Equipment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+
 }
