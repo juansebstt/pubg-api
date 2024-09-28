@@ -19,21 +19,19 @@ public class Consumable {
     private long id;
 
     private String name;
+    private Long castTime;
 
     @Enumerated(EnumType.STRING)
-    private Healing healing;
+    private ConsumableType consumableType;
 
     private String description;
 
-    private String healingAmount;
-    private String boosterAmount;
+    private Integer healthLimit;
+    private Integer boostAmount;
 
     @Getter
     public enum ConsumableType {
-        MEDKIT,
-        BANDAGE,
-        BOOSTER,
-        PAINKILLERS,
-        ENERGY_DRINK
+        HEALING,
+        BOOST,
     }
 }

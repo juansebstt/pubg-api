@@ -1,6 +1,5 @@
 package com.pubg.api.commons.exceptions;
 
-import com.fasterxml.jackson.annotation.JacksonInject;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ public class WeaponException extends RuntimeException {
         super(message);
     }
 
-    public JacksonInject getHttpStatus() {
+    public int getHttpStatus() {
         return null;
     }
 }
