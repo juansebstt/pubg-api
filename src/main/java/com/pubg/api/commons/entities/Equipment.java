@@ -1,12 +1,14 @@
 package com.pubg.api.commons.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "equipment")
@@ -17,6 +19,8 @@ public class Equipment {
     private long id;
 
     private String name;
+    private Long damageReduction;
+    private Long capacity;
 
     @Enumerated(EnumType.STRING)
     private EquipmentType equipmentType;
