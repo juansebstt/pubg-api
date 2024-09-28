@@ -19,11 +19,15 @@ public class Attachment {
     private long id;
 
     private String name;
-    private Long magnificationFOV;
-    private Long adsSpeed;
-    private Long reloadSpeed;
-    private Integer ammoCapacity;
     private String description;
+    private Double magnification;
+    private Double adsSpeed;
+    private Double reloadSpeed;
+    private Integer ammoCapacity;
+    private Double recoilControl;
+
+    @Enumerated(EnumType.STRING)
+    private AttachmentType attachmentType;
 
     @Enumerated(EnumType.STRING)
     private ScopeFeature scopeFeature;
@@ -39,6 +43,15 @@ public class Attachment {
 
     @Enumerated(EnumType.STRING)
     private StockFeature stockFeature;
+
+    @Getter
+    public enum AttachmentType {
+        SCOPE,
+        MUZZLE,
+        GRIP,
+        STOCK,
+        MAGAZINE,
+    }
 
     @Getter
     public enum ScopeFeature {
@@ -88,5 +101,7 @@ public class Attachment {
         WEAPON_STABILITY_AFTER_SHOT,
         SWAY,
     }
+
+
 
 }

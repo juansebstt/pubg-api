@@ -28,10 +28,12 @@ public class Consumable {
 
     private Integer healthLimit;
     private Integer boostAmount;
+    private Integer maxRepairAmount;
 
     @Getter
     public enum ConsumableType {
         HEALING,
         BOOST,
+        REPAIR,
     }
 }
