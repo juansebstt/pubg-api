@@ -23,6 +23,7 @@ public class Attachment {
     private Long adsSpeed;
     private Long reloadSpeed;
     private Integer ammoCapacity;
+    private String description;
 
     @Enumerated(EnumType.STRING)
     private ScopeFeature scopeFeature;
@@ -37,6 +38,55 @@ public class Attachment {
     private GripFeature gripFeature;
 
     @Enumerated(EnumType.STRING)
-    private StockFeture stockFeture;
+    private StockFeature stockFeature;
+
+    @Getter
+    public enum ScopeFeature {
+        MAGNIFICATION_FOV,
+        ADS_SPEED,
+    }
+
+    @Getter
+    public enum MagazineFeature {
+        RELOAD_SPEED,
+        AMMO_CAPACITY,
+    }
+
+    @Getter
+    public enum MuzzleFeature {
+        RECOIL_CONTROL,
+        RECOIL_PATTERN,
+        HORIZONTAL_RECOIL_PATTERN,
+        VERTICAL_RECOIL_PATTERN,
+        WEAPON_SOUND,
+        MUZZLE_FLASH,
+        PELLET_SPREAD
+    }
+
+    @Getter
+    public enum GripFeature {
+        ADS_SPEED,
+        VERTICAL_RECOIL_CONTROL,
+        HORIZONTAL_RECOIL_CONTROL,
+        WEAPON_STEADINESS,
+        RECOIL_PATTERN,
+        HORIZONTAL_RECOIL_PATTERN,
+        VERTICAL_RECOIL_PATTERN,
+        RECOIL_RECOVERY,
+        ANIMATION_KICK,
+        SWAY
+    }
+
+    @Getter
+    public enum StockFeature {
+        RELOAD_SPEED,
+        RECOIL_KICK,
+        VERTICAL_RECOIL_CONTROL,
+        HORIZONTAL_RECOIL_CONTROL,
+        STABILITY_SPEED,
+        WEAPON_STEADINESS,
+        WEAPON_STABILITY_AFTER_SHOT,
+        SWAY,
+    }
 
 }
