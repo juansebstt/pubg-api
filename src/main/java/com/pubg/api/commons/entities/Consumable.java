@@ -28,4 +28,12 @@ public class Consumable {
     private String healingAmount;
     private String boosterAmount;
 
+    @Getter
+    public enum ConsumableType {
+        MEDKIT,
+        BANDAGE,
+        BOOSTER,
+        PAINKILLERS,
+        ENERGY_DRINK
+    }
 }

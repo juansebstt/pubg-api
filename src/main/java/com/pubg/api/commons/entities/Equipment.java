@@ -8,7 +8,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "equipment")
@@ -18,5 +17,18 @@ public class Equipment {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    private String name;
 
+    @Enumerated(EnumType.STRING)
+    private EquipmentType equipmentType;
+
+    private String description;
+
+    @Getter
+    public enum EquipmentType {
+        BACKPACK,
+        HELMET,
+        ARMOR,
+        ATTACHMENT
+    }
 }
