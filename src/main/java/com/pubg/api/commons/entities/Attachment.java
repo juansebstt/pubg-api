@@ -19,30 +19,30 @@ public class Attachment {
     private long id;
 
     private String name;
-    private String description;
-    private Double magnification;
+    private Double magnificationFov;
     private Double adsSpeed;
     private Double reloadSpeed;
     private Integer ammoCapacity;
     private Double recoilControl;
+    private String recoilPattern;
+    private String horizontalRecoilPattern;
+    private String verticalRecoilPattern;
+    private String weaponSound;
+    private String muzzleFlash;
+    private String pelletSpread;
+    private Double verticalRecoilControl;
+    private Double horizontalRecoilControl;
+    private Double weaponSteadiness;
+    private Double recoilRecovery;
+    private String animationKick;
+    private String sway;
+    private Double recoilKick;
+    private Double stabilitySpeed;
+    private Double weaponStabilityAfterShot;
+    private String description;
 
     @Enumerated(EnumType.STRING)
     private AttachmentType attachmentType;
-
-    @Enumerated(EnumType.STRING)
-    private ScopeFeature scopeFeature;
-
-    @Enumerated(EnumType.STRING)
-    private MagazineFeature magazineFeature;
-
-    @Enumerated(EnumType.STRING)
-    private MuzzleFeature muzzleFeature;
-
-    @Enumerated(EnumType.STRING)
-    private GripFeature gripFeature;
-
-    @Enumerated(EnumType.STRING)
-    private StockFeature stockFeature;
 
     @Getter
     public enum AttachmentType {
@@ -52,56 +52,4 @@ public class Attachment {
         STOCK,
         MAGAZINE,
     }
-
-    @Getter
-    public enum ScopeFeature {
-        MAGNIFICATION_FOV,
-        ADS_SPEED,
-    }
-
-    @Getter
-    public enum MagazineFeature {
-        RELOAD_SPEED,
-        AMMO_CAPACITY,
-    }
-
-    @Getter
-    public enum MuzzleFeature {
-        RECOIL_CONTROL,
-        RECOIL_PATTERN,
-        HORIZONTAL_RECOIL_PATTERN,
-        VERTICAL_RECOIL_PATTERN,
-        WEAPON_SOUND,
-        MUZZLE_FLASH,
-        PELLET_SPREAD
-    }
-
-    @Getter
-    public enum GripFeature {
-        ADS_SPEED,
-        VERTICAL_RECOIL_CONTROL,
-        HORIZONTAL_RECOIL_CONTROL,
-        WEAPON_STEADINESS,
-        RECOIL_PATTERN,
-        HORIZONTAL_RECOIL_PATTERN,
-        VERTICAL_RECOIL_PATTERN,
-        RECOIL_RECOVERY,
-        ANIMATION_KICK,
-        SWAY
-    }
-
-    @Getter
-    public enum StockFeature {
-        RELOAD_SPEED,
-        RECOIL_KICK,
-        VERTICAL_RECOIL_CONTROL,
-        HORIZONTAL_RECOIL_CONTROL,
-        STABILITY_SPEED,
-        WEAPON_STEADINESS,
-        WEAPON_STABILITY_AFTER_SHOT,
-        SWAY,
-    }
-
-
-
 }
