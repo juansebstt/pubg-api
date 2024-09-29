@@ -14,7 +14,8 @@ public class WeaponException extends RuntimeException {
         super(message);
     }
 
-    public int getHttpStatus() {
-        return null;
+    public int getHttpStatus(String message) {
+
+        return Integer.parseInt(getMessage());
     }
 }

@@ -14,10 +14,10 @@ public class ExceptionHandlerController {
     ResponseEntity<ErrorResponse> handleError(WeaponException weaponException){
         log.error("New Exception", weaponException); // Log the exception details
         var errorResponse = ErrorResponse.builder()
-                .codeStatus(Integer.valueOf(weaponException.getHttpStatus())) // Set HTTP status code in the response
+                .codeStatus(Integer.valueOf(weaponException.getHttpStatus(weaponException.getMessage()))) // Set HTTP status code in the response
                 .message(weaponException.getMessage()) // Set the error message in the response
                 .build();
 
-        return ResponseEntity.status(weaponException.getHttpStatus()).body(errorResponse); // Return the error response
+        return ResponseEntity.status(weaponException.getHttpStatus(errorResponse.getMessage())).body(errorResponse); // Return the error response
     }
 }
