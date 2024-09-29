@@ -24,6 +24,7 @@ public class Weapon {
     private WeaponType weaponType;
 
     private int hitDamage;
+    private int damagePerSecond;
     private double initialBulletSpeed;
 
     @Enumerated(EnumType.STRING)
