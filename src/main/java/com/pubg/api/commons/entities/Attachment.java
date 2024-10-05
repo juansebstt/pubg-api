@@ -1,5 +1,6 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.AttachmentTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -42,14 +43,7 @@ public class Attachment {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private AttachmentType attachmentType;
+    private AttachmentTypeEnum attachmentType;
 
-    @Getter
-    public enum AttachmentType {
-        SCOPE,
-        MUZZLE,
-        GRIP,
-        STOCK,
-        MAGAZINE,
-    }
+
 }
