@@ -1,4 +1,12 @@
 package com.pubg.api.commons.enums;
 
-public class FiringModeEnum {
+import lombok.Getter;
+
+@Getter
+public enum FiringModeEnum {
+
+    SINGLE,
+    BURST,
+    AUTO
+
 }

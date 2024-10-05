@@ -1,5 +1,7 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.AmmoTypeEnum;
+import com.pubg.api.commons.enums.FiringModeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +30,7 @@ public class Weapon {
     private double initialBulletSpeed;
 
     @Enumerated(EnumType.STRING)
-    private AmmoType ammoType;
+    private AmmoTypeEnum ammoType;
 
     private String weaponDescription;
     private int attachmentPoints;
@@ -37,36 +39,7 @@ public class Weapon {
     private String rarity;
 
     @Enumerated(EnumType.STRING)
-    private FiringMode firingMode;
-
-    @Getter
-    public enum FiringMode {
-        SINGLE,
-        BURST,
-        AUTO
-    }
-
-    @Getter
-    public enum AmmoType {
-        THREE_HUNDRED_MAGNUM(".300 Magnum"),
-        FIVE_FIVE_SIX("5.56mm"),
-        SEVEN_SIX_TWO("7.62mm"),
-        TWELVE_GAUGE("12 Gauge"),
-        FORTY_FIVE_ACP(".45 ACP"),
-        FORTY_MM("40 mm"),
-        FIVE_SEVEN("5.7 mm"),
-        SIXTY_MM("60 mm "),
-        NINE_MM("9 mm"),
-        BOLT("Bolt"),
-        FLARE("Flare");
-
-        private final String description;
-
-        AmmoType(String description) {
-            this.description = description;
-        }
-
-    }
+    private FiringModeEnum firingMode;
 
     @Getter
     public enum WeaponType {
