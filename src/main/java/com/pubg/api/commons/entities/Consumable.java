@@ -1,5 +1,6 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.ConsumableTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,7 @@ public class Consumable {
     private Long castTime;
 
     @Enumerated(EnumType.STRING)
-    private ConsumableType consumableType;
+    private ConsumableTypeEnum consumableType;
 
     private String description;
 
@@ -30,10 +31,4 @@ public class Consumable {
     private Integer boostAmount;
     private Integer maxRepairAmount;
 
-    @Getter
-    public enum ConsumableType {
-        HEALING,
-        BOOST,
-        REPAIR,
-    }
 }
