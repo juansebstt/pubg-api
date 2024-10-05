@@ -1,5 +1,7 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.EquipmentLevelEnum;
+import com.pubg.api.commons.enums.EquipmentTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,24 +25,11 @@ public class Equipment {
     private Long capacity;
 
     @Enumerated(EnumType.STRING)
-    private EquipmentType equipmentType;
+    private EquipmentTypeEnum equipmentType;
 
     @Enumerated(EnumType.STRING)
-    private equipmentLevel equipmentLevel;
+    private EquipmentLevelEnum equipmentLevel;
 
     private String description;
-
-    @Getter
-    public enum EquipmentType {
-        BACKPACK,
-        HELMET,
-        VEST,
-    }
-
-    @Getter
-    public enum equipmentLevel {
-        LEVEL_1,
-        LEVEL_2,
-        LEVEL_3
-    }
+    
 }
