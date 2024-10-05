@@ -2,6 +2,7 @@ package com.pubg.api.commons.entities;
 
 import com.pubg.api.commons.enums.AmmoTypeEnum;
 import com.pubg.api.commons.enums.FiringModeEnum;
+import com.pubg.api.commons.enums.WeaponTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Weapon {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private WeaponType weaponType;
+    private WeaponTypeEnum weaponType;
 
     private int hitDamage;
     private int damagePerSecond;
@@ -40,28 +41,6 @@ public class Weapon {
 
     @Enumerated(EnumType.STRING)
     private FiringModeEnum firingMode;
-
-    @Getter
-    public enum WeaponType {
-        ASSAULT_RIFLES("Assault Rifles (ARs)"),
-        DESIGNATED_MARKSMAN_RIFLES("Designated Marksman Rifles (DMRs)"),
-        RIFLES("Rifles"),
-        SUBMACHINE_GUNS("Submachine Guns (SMGs)"),
-        SNIPER_RIFLES("Sniper Rifles (SRs)"),
-        LIGHT_MACHINE_GUNS("Light Machine Guns (LMGs)"),
-        SHOTGUNS("Shotguns"),
-        BOWS("Bows"),
-        PISTOLS("Pistols"),
-        THROWABLES("Throwables"),
-        MELEE_WEAPONS("Melee Weapons"),
-        MISCELLANEOUS_WEAPONS("Miscellaneous Weapons");
-
-        private final String description;
-
-        WeaponType(String description) {
-            this.description = description;
-        }
-    }
 
     public String getAmmoTypeDescription() {
         return ammoType.getDescription();
