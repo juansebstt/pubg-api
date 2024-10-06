@@ -31,5 +31,5 @@ public class Equipment {
     private EquipmentLevelEnum equipmentLevel;
 
     private String description;
-    
+
 }
