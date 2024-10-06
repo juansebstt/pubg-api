@@ -1,6 +1,7 @@
 package com.pubg.api.commons.entities;
 
 import com.pubg.api.commons.enums.VehicleCategoryEnum;
+import com.pubg.api.commons.enums.VehicleTypeEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class Vehicle {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private VehicleType vehicleType;
+    private VehicleTypeEnum vehicleType;
 
     private int maxSpeed;
     private int maxPassengerCapacity;
@@ -41,27 +42,5 @@ public class Vehicle {
             inverseJoinColumns = @JoinColumn(name = "map_id")
     )
     private Set<Map> maps; // Set of maps where the vehicle can spawn
-
-    @Getter
-    public enum VehicleCategory {
-        BUSES,
-        BOATS,
-        COUPES,
-        MOTORCYCLES,
-        OFF_ROAD,
-        PLANES,
-        SEDANS,
-        TRUCKS,
-        SUV,
-        SPECIAL,
-        BIKES
-    }
-
-    @Getter
-    public enum VehicleType {
-        LAND,
-        WATER,
-        AIR
-    }
 
 }
