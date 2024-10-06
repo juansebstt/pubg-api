@@ -1,5 +1,6 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.VehicleCategoryEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,7 +32,7 @@ public class Vehicle {
     private String description;
 
     @Enumerated(EnumType.STRING)
-    private VehicleCategory vehicleCategory;
+    private VehicleCategoryEnum vehicleCategory;
 
     @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinTable(
