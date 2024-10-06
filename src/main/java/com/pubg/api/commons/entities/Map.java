@@ -1,6 +1,9 @@
 package com.pubg.api.commons.entities;
 
+import com.pubg.api.commons.enums.LocationEnum;
 import com.pubg.api.commons.enums.MapsEnum;
+import com.pubg.api.commons.enums.TypeOfCombatEnum;
+import com.pubg.api.commons.enums.WeatherEnum;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,15 +36,15 @@ public class Map {
     private Set<Vehicle> vehicles = new HashSet<>();
 
     @Enumerated(EnumType.STRING)
-    private Location location;
+    private LocationEnum location;
 
     @Enumerated(EnumType.STRING)
-    private TypeOfCombat typeOfCombat;
+    private TypeOfCombatEnum typeOfCombat;
 
     private String mapDescription;
 
     @Enumerated(EnumType.STRING)
-    private Weather weather;
+    private WeatherEnum weather;
 
     // Method to get cities for the specific map
     public List<String> getCities() {
