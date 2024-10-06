@@ -52,26 +52,8 @@ public class Map {
     }
 
     @Getter
-    public enum Weather {
-        SUNNY,
-        FOGGY,
-        RAINY,
-        OVERCAST,
-        SUNSET,
-        MOONLIGHT,
-        STORMY,
-        WINDY
-    }
-
-    @Getter
     public enum Location {
-        NORTH_AMERICA,
-        SOUTH_AMERICA,
-        EUROPE,
-        ANTARCTICA,
-        AFRICA,
-        ASIA,
-        OCEANIA
+
     }
 
     @Getter
