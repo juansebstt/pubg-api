@@ -51,15 +51,4 @@ public class Map {
         return maps.getCities();
     }
 
-    @Getter
-    public enum Location {
-
-    }
-
-    @Getter
-    public enum TypeOfCombat {
-        CLOSE_QUARTER_COMBAT,
-        MEDIUM_RANGE,
-        LONG_RANGE,
-    }
 }
