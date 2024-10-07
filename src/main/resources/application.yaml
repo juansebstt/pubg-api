@@ -1,19 +1,18 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:pubg_game_db  # This defines an in-memory H2 database
+    url: jdbc:h2:file:./data/pubg_game_db  # This stores the H2 database as a file in the 'data' folder in your project
     driver-class-name: org.h2.Driver
     username: sa
-    password:
+    password: 1234
   h2:
     console:
-      enabled: true  # Enables access to the H2 database console
+      enabled: true  # Enables access to the H2 console for database inspection
   jpa:
     hibernate:
-      ddl-auto: update  # Creates/updates the tables automatically based on your entities
+      ddl-auto: update  # Keeps your schema updated based on your entity classes
     show-sql: true  # Shows the generated SQL queries in the console
 
-# Optional: To customize the H2 console path
 server:
-  port: 8080  # Default server port, you can change it if needed
+  port: 8080
   servlet:
-    context-path: /api  # Optional, customize the root path of the application
+    context-path: /api  # Customize the root path of the application if needed
