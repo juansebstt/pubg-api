@@ -3,7 +3,7 @@ spring:
     url: jdbc:h2:file:./data/pubg_game_db  # This stores the H2 database as a file in the 'data' folder in your project
     driver-class-name: org.h2.Driver
     username: sa
-    password: 1234
+    password:
   h2:
     console:
       enabled: true  # Enables access to the H2 console for database inspection
