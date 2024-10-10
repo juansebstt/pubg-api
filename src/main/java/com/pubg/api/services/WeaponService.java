@@ -4,6 +4,6 @@ import com.pubg.api.commons.entities.Weapon;
 
 public interface WeaponService {
 
-    Weapon saveWeapon(String id, Weapon weaponRequest);
+    Weapon saveWeapon(Weapon weaponRequest);
 
 }

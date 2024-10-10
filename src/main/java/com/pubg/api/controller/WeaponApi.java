@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface WeaponApi {
 
     @PostMapping("/weapon")
-    ResponseEntity<Weapon> saveWeapon(String id, @RequestBody Weapon weapon);
+    ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon);
 
 }

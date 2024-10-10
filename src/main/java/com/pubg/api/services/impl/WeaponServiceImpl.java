@@ -19,9 +19,8 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Weapon saveWeapon(String id, Weapon weaponRequest) {
-        
-        weaponRequest.setId(Long.parseLong(id));
+    public Weapon saveWeapon(Weapon weaponRequest) {
+
         return Optional.of(weaponRequest)
                 .map(weaponRepository::save)
                 .orElseThrow(() -> new GlobalExceptionHandler(HttpStatus.BAD_REQUEST));

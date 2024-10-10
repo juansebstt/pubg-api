@@ -17,9 +17,8 @@ public class WeaponController implements WeaponApi {
     }
 
     @Override
-    public ResponseEntity<Weapon> saveWeapon(String id, @RequestBody Weapon weapon) {
-        System.out.println(id);
-        var weaponCreated = this.weaponService.saveWeapon(id, weapon);
+    public ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon) {
+        var weaponCreated = this.weaponService.saveWeapon(weapon);
         return ResponseEntity.ok(weaponCreated);
     }
 }
