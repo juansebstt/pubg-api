@@ -1,5 +1,6 @@
 package com.pubg.api.commons.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.pubg.api.commons.enums.AmmoTypeEnum;
 import com.pubg.api.commons.enums.FiringModeEnum;
 import com.pubg.api.commons.enums.WeaponTypeEnum;
@@ -42,10 +43,12 @@ public class Weapon {
     @Enumerated(EnumType.STRING)
     private FiringModeEnum firingMode;
 
+    @JsonIgnore
     public String getAmmoTypeDescription() {
         return ammoType.getDescription();
     }
 
+    @JsonIgnore
     public String getWeaponTypeDescription() {
         return weaponType.getDescription();
     }
