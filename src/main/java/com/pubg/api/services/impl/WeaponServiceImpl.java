@@ -4,6 +4,7 @@ import com.pubg.api.commons.entities.Weapon;
 import com.pubg.api.commons.exceptions.GlobalExceptionHandler;
 import com.pubg.api.repositories.WeaponRepository;
 import com.pubg.api.services.WeaponService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class WeaponServiceImpl implements WeaponService {
 
     private final WeaponRepository weaponRepository;
 
+    @Autowired
     public WeaponServiceImpl(WeaponRepository weaponRepository) {
         this.weaponRepository = weaponRepository;
     }
@@ -24,5 +26,10 @@ public class WeaponServiceImpl implements WeaponService {
         return Optional.of(weaponRequest)
                 .map(weaponRepository::save)
                 .orElseThrow(() -> new GlobalExceptionHandler(HttpStatus.BAD_REQUEST));
+    }
+
+    @Override
+    public Optional<Weapon> findWeaponByName(String name) {
+        return weaponRepository.findByNameIgnoreCase(name);
     }
 }
