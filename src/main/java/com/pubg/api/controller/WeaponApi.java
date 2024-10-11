@@ -14,6 +14,6 @@ public interface WeaponApi {
     ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon);
 
     @GetMapping("/weapons")
-    ResponseEntity<List<Weapon>> getWeaponsByName(@RequestParam String name);
+    ResponseEntity<Weapon> getWeaponsByName(@RequestParam String name);
 
 }

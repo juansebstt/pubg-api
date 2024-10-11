@@ -3,9 +3,13 @@ package com.pubg.api.controller.impl;
 import com.pubg.api.commons.entities.Weapon;
 import com.pubg.api.controller.WeaponApi;
 import com.pubg.api.services.WeaponService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class WeaponController implements WeaponApi {
@@ -20,5 +24,13 @@ public class WeaponController implements WeaponApi {
     public ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon) {
         var weaponCreated = this.weaponService.saveWeapon(weapon);
         return ResponseEntity.ok(weaponCreated);
+    }
+
+    @Override
+    public ResponseEntity<Weapon> getWeaponsByName(String name) {
+        Optional<Weapon> weapon = weaponService.findWeaponByName(name);
+
+        return weapon.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
