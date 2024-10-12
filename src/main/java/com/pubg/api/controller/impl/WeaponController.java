@@ -1,5 +1,6 @@
 package com.pubg.api.controller.impl;
 
+import com.pubg.api.commons.dto.WeaponDTO;
 import com.pubg.api.commons.entities.Weapon;
 import com.pubg.api.controller.WeaponApi;
 import com.pubg.api.services.WeaponService;
@@ -21,14 +22,14 @@ public class WeaponController implements WeaponApi {
     }
 
     @Override
-    public ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon) {
+    public ResponseEntity<WeaponDTO> saveWeapon(@RequestBody WeaponDTO weapon) {
         var weaponCreated = this.weaponService.saveWeapon(weapon);
         return ResponseEntity.ok(weaponCreated);
     }
 
     @Override
-    public ResponseEntity<Weapon> getWeaponsByName(String name) {
-        Optional<Weapon> weapon = weaponService.findWeaponByName(name);
+    public ResponseEntity<WeaponDTO> getWeaponsByName(String name) {
+        Optional<WeaponDTO> weapon = weaponService.findWeaponByName(name);
 
         return weapon.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));

@@ -1,6 +1,7 @@
 package com.pubg.api.controller;
 
 import com.pubg.api.commons.constants.ApiPathVariables;
+import com.pubg.api.commons.dto.WeaponDTO;
 import com.pubg.api.commons.entities.Weapon;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.List;
 public interface WeaponApi {
 
     @PostMapping("/weapon")
-    ResponseEntity<Weapon> saveWeapon(@RequestBody Weapon weapon);
+    ResponseEntity<WeaponDTO> saveWeapon(@RequestBody WeaponDTO weapon);
 
     @GetMapping("/weapons")
     ResponseEntity<Weapon> getWeaponsByName(@RequestParam String name);

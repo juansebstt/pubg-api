@@ -1,5 +1,6 @@
 package com.pubg.api.services.impl;
 
+import com.pubg.api.commons.dto.WeaponDTO;
 import com.pubg.api.commons.entities.Weapon;
 import com.pubg.api.commons.exceptions.GlobalExceptionHandler;
 import com.pubg.api.repositories.WeaponRepository;
@@ -21,7 +22,7 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Weapon saveWeapon(Weapon weaponRequest) {
+    public WeaponDTO saveWeapon(WeaponDTO weaponRequest) {
 
         return Optional.of(weaponRequest)
                 .map(weaponRepository::save)
@@ -29,7 +30,7 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Optional<Weapon> findWeaponByName(String name) {
+    public Optional<WeaponDTO> findWeaponByName(String name) {
         return weaponRepository.findByNameIgnoreCase(name);
     }
 }
