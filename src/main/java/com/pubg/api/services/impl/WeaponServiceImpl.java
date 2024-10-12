@@ -2,12 +2,10 @@ package com.pubg.api.services.impl;
 
 import com.pubg.api.commons.dto.WeaponDTO;
 import com.pubg.api.commons.entities.Weapon;
-import com.pubg.api.commons.exceptions.GlobalExceptionHandler;
 import com.pubg.api.mappers.WeaponMapper;
 import com.pubg.api.repositories.WeaponRepository;
 import com.pubg.api.services.WeaponService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -34,7 +32,7 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Optional<WeaponDTO> findWeaponByName(String name) {
+    public Optional<Weapon> findWeaponByName(String name) {
         return weaponRepository.findByNameIgnoreCase(name);
     }
 }

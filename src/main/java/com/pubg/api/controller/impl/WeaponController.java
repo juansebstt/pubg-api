@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -28,8 +27,8 @@ public class WeaponController implements WeaponApi {
     }
 
     @Override
-    public ResponseEntity<WeaponDTO> getWeaponsByName(String name) {
-        Optional<WeaponDTO> weapon = weaponService.findWeaponByName(name);
+    public ResponseEntity<Weapon> getWeaponsByName(String name) {
+        Optional<Weapon> weapon = weaponService.findWeaponByName(name);
 
         return weapon.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));

@@ -11,19 +11,20 @@ public class WeaponMapper {
     public static WeaponDTO toWeaponDTO(Weapon weapon) {
 
         WeaponDTO weaponDTO = new WeaponDTO();
+
         weaponDTO.setId(weapon.getId());
         weaponDTO.setName(weapon.getName());
-        weaponDTO.setWeaponType(String.valueOf(weapon.getWeaponType()));
+        weaponDTO.setWeaponType(weapon.getWeaponType());
         weaponDTO.setHitDamage(weapon.getHitDamage());
         weaponDTO.setDamagePerSecond(weapon.getDamagePerSecond());
         weaponDTO.setInitialBulletSpeed(weapon.getInitialBulletSpeed());
-        weaponDTO.setAmmoType(String.valueOf(weapon.getAmmoType()));
+        weaponDTO.setAmmoType(weapon.getAmmoType());
         weaponDTO.setWeaponDescription(weapon.getWeaponDescription());
         weaponDTO.setAttachmentPoints(weapon.getAttachmentPoints());
         weaponDTO.setMagazineSize(weapon.getMagazineSize());
         weaponDTO.setExtendedMagazineSize(weapon.getExtendedMagazineSize());
         weaponDTO.setRarity(weapon.getRarity());
-        weaponDTO.setFiringMode(String.valueOf(weapon.getFiringMode()));
+        weaponDTO.setFiringMode(weapon.getFiringMode());
 
         return weaponDTO;
     }
@@ -34,19 +35,18 @@ public class WeaponMapper {
 
         weapon.setId(weaponDTO.getId());
         weapon.setName(weaponDTO.getName());
-        weapon.setWeaponType(WeaponTypeEnum.valueOf(weaponDTO.getWeaponType()));
+        weapon.setWeaponType(WeaponTypeEnum.valueOf(String.valueOf(weaponDTO.getWeaponType())));
         weapon.setHitDamage(weaponDTO.getHitDamage());
         weapon.setDamagePerSecond((int) weaponDTO.getDamagePerSecond());
         weapon.setInitialBulletSpeed(weaponDTO.getInitialBulletSpeed());
-        weapon.setAmmoType(AmmoTypeEnum.valueOf(weaponDTO.getAmmoType()));
+        weapon.setAmmoType(AmmoTypeEnum.valueOf(String.valueOf(weaponDTO.getAmmoType())));
         weapon.setWeaponDescription(weaponDTO.getWeaponDescription());
         weapon.setAttachmentPoints(weaponDTO.getAttachmentPoints());
         weapon.setMagazineSize(weaponDTO.getMagazineSize());
         weapon.setExtendedMagazineSize(weaponDTO.getExtendedMagazineSize());
         weapon.setRarity(weaponDTO.getRarity());
-        weapon.setFiringMode(FiringModeEnum.valueOf(weaponDTO.getFiringMode()));
+        weapon.setFiringMode(FiringModeEnum.valueOf(String.valueOf(weaponDTO.getFiringMode())));
 
         return weapon;
-
     }
 }
