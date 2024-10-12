@@ -3,6 +3,7 @@ package com.pubg.api.services.impl;
 import com.pubg.api.commons.dto.WeaponDTO;
 import com.pubg.api.commons.entities.Weapon;
 import com.pubg.api.commons.exceptions.GlobalExceptionHandler;
+import com.pubg.api.mappers.WeaponMapper;
 import com.pubg.api.repositories.WeaponRepository;
 import com.pubg.api.services.WeaponService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,15 @@ public class WeaponServiceImpl implements WeaponService {
         this.weaponRepository = weaponRepository;
     }
 
-    @Override
     public WeaponDTO saveWeapon(WeaponDTO weaponRequest) {
+        // Convert WeaponDTO to Weapon entity
+        Weapon weapon = WeaponMapper.toWeaponEntity(weaponRequest);
 
-        return Optional.of(weaponRequest)
-                .map(weaponRepository::save)
-                .orElseThrow(() -> new GlobalExceptionHandler(HttpStatus.BAD_REQUEST));
+        // Save the Weapon entity to the database
+        Weapon savedWeapon = weaponRepository.save(weapon);
+
+        // Convert the saved Weapon back to WeaponDTO and return
+        return WeaponMapper.toWeaponDTO(savedWeapon);
     }
 
     @Override
