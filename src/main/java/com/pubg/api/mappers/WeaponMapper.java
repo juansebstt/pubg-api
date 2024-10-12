@@ -9,25 +9,29 @@ import com.pubg.api.commons.enums.WeaponTypeEnum;
 public class WeaponMapper {
 
     public static WeaponDTO toWeaponDTO(Weapon weapon) {
-        return new WeaponDTO(
-                weapon.getId(),
-                weapon.getName(),
-                weapon.getWeaponType().name(),
-                weapon.getHitDamage(),
-                weapon.getDamagePerSecond(),
-                weapon.getInitialBulletSpeed(),
-                weapon.getAmmoType().name(),
-                weapon.getWeaponDescription(),
-                weapon.getAttachmentPoints(),
-                weapon.getMagazineSize(),
-                weapon.getExtendedMagazineSize(),
-                weapon.getRarity(),
-                weapon.getFiringMode().name()
-        );
+
+        WeaponDTO weaponDTO = new WeaponDTO();
+        weaponDTO.setId(weapon.getId());
+        weaponDTO.setName(weapon.getName());
+        weaponDTO.setWeaponType(String.valueOf(weapon.getWeaponType()));
+        weaponDTO.setHitDamage(weapon.getHitDamage());
+        weaponDTO.setDamagePerSecond(weapon.getDamagePerSecond());
+        weaponDTO.setInitialBulletSpeed(weapon.getInitialBulletSpeed());
+        weaponDTO.setAmmoType(String.valueOf(weapon.getAmmoType()));
+        weaponDTO.setWeaponDescription(weapon.getWeaponDescription());
+        weaponDTO.setAttachmentPoints(weapon.getAttachmentPoints());
+        weaponDTO.setMagazineSize(weapon.getMagazineSize());
+        weaponDTO.setExtendedMagazineSize(weapon.getExtendedMagazineSize());
+        weaponDTO.setRarity(weapon.getRarity());
+        weaponDTO.setFiringMode(String.valueOf(weapon.getFiringMode()));
+
+        return weaponDTO;
     }
 
     public static Weapon toWeaponEntity(WeaponDTO weaponDTO) {
+
         Weapon weapon = new Weapon();
+
         weapon.setId(weaponDTO.getId());
         weapon.setName(weaponDTO.getName());
         weapon.setWeaponType(WeaponTypeEnum.valueOf(weaponDTO.getWeaponType()));
@@ -43,5 +47,6 @@ public class WeaponMapper {
         weapon.setFiringMode(FiringModeEnum.valueOf(weaponDTO.getFiringMode()));
 
         return weapon;
+        
     }
 }
