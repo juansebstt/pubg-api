@@ -33,6 +33,6 @@ public class WeaponController implements WeaponApi {
         Optional<Weapon> weapon = weaponService.findWeaponByName(name);
 
         return weapon.map(value -> ResponseEntity.ok(WeaponMapper.toWeaponDTO(value)))
-                .orElseGet(() -> ResponseEntity.notFound().build());
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }
