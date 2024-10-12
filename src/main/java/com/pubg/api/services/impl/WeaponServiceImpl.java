@@ -21,14 +21,11 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     public WeaponDTO saveWeapon(WeaponDTO weaponRequest) {
-        // Convert WeaponDTO to Weapon entity
         Weapon weapon = WeaponMapper.toWeaponEntity(weaponRequest);
-
-        // Save the Weapon entity to the database
         Weapon savedWeapon = weaponRepository.save(weapon);
 
-        // Convert the saved Weapon back to WeaponDTO and return
         return WeaponMapper.toWeaponDTO(savedWeapon);
+
     }
 
     @Override
