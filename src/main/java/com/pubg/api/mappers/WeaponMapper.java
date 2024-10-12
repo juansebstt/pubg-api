@@ -47,6 +47,6 @@ public class WeaponMapper {
         weapon.setFiringMode(FiringModeEnum.valueOf(weaponDTO.getFiringMode()));
 
         return weapon;
-        
+
     }
 }
