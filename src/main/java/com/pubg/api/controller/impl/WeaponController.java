@@ -30,9 +30,9 @@ public class WeaponController implements WeaponApi {
 
     @Override
     public ResponseEntity<WeaponDTO> getWeaponsByName(@RequestParam String name) {
-        Optional<Weapon> weapon = weaponService.findWeaponByName(name);
+        Optional<WeaponDTO> weapon = weaponService.findWeaponByName(name);
 
-        return weapon.map(value -> ResponseEntity.ok(WeaponMapper.toWeaponDTO(value)))
+        return weapon.map(ResponseEntity::ok)
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 }

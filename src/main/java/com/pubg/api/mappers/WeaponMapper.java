@@ -14,17 +14,17 @@ public class WeaponMapper {
 
         weaponDTO.setId(weapon.getId());
         weaponDTO.setName(weapon.getName());
-        weaponDTO.setWeaponType(weapon.getWeaponType());
+        weaponDTO.setWeaponType(String.valueOf(weapon.getWeaponType()));
         weaponDTO.setHitDamage(weapon.getHitDamage());
         weaponDTO.setDamagePerSecond(weapon.getDamagePerSecond());
         weaponDTO.setInitialBulletSpeed(weapon.getInitialBulletSpeed());
-        weaponDTO.setAmmoType(weapon.getAmmoType());
+        weaponDTO.setAmmoType(String.valueOf(weapon.getAmmoType()));
         weaponDTO.setWeaponDescription(weapon.getWeaponDescription());
         weaponDTO.setAttachmentPoints(weapon.getAttachmentPoints());
         weaponDTO.setMagazineSize(weapon.getMagazineSize());
         weaponDTO.setExtendedMagazineSize(weapon.getExtendedMagazineSize());
         weaponDTO.setRarity(weapon.getRarity());
-        weaponDTO.setFiringMode(weapon.getFiringMode());
+        weaponDTO.setFiringMode(String.valueOf(weapon.getFiringMode()));
 
         return weaponDTO;
     }

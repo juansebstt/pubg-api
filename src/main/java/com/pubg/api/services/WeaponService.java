@@ -12,7 +12,7 @@ public interface WeaponService {
     WeaponDTO saveWeapon(WeaponDTO weaponRequest);
 
 
-    Optional<Weapon> findWeaponByName(String name);
+    Optional<WeaponDTO> findWeaponByName(String name);
 
     }
 

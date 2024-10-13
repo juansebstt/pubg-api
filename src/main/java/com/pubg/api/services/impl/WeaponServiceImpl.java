@@ -29,7 +29,8 @@ public class WeaponServiceImpl implements WeaponService {
     }
 
     @Override
-    public Optional<Weapon> findWeaponByName(String name) {
-        return weaponRepository.findByNameIgnoreCase(name);
+    public Optional<WeaponDTO> findWeaponByName(String name) {
+        return weaponRepository.findByNameIgnoreCase(name)
+                .map(WeaponMapper::toWeaponDTO);  // Map Weapon to WeaponDTO
     }
 }

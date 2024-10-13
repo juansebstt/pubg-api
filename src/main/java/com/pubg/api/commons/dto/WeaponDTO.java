@@ -14,16 +14,16 @@ public class WeaponDTO {
 
     private long id;
     private String name;
-    private WeaponTypeEnum weaponType;
+    private String weaponType;
     private int hitDamage;
     private double damagePerSecond;
     private double initialBulletSpeed;
-    private AmmoTypeEnum ammoType;
+    private String ammoType;
     private String weaponDescription;
     private int attachmentPoints;
     private int magazineSize;
     private int extendedMagazineSize;
     private String rarity;
-    private FiringModeEnum firingMode;
+    private String firingMode;
 
 }
